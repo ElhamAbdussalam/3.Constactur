@@ -3,15 +3,18 @@
 class Produk
 {
     public
-        $judul = "judul",
-        $penulis = "penulis",
-        $penerbit = "penerbit",
-        $harga = 0;
+        $judul,
+        $penulis,
+        $penerbit,
+        $harga;
 
-    // public function sayHello()
-    // {
-    //     return "Hello World!";
-    // }
+    public function __construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0)
+    {
+        $this->judul = $judul;
+        $this->penulis = $penulis;
+        $this->penerbit = $penerbit;
+        $this->harga = $harga;
+    }
 
     public function getLabel()
     {
@@ -19,27 +22,10 @@ class Produk
     }
 }
 
-// $produk1 = new Produk();
-// $produk1->judul = "Naruto";
-// var_dump($produk1);
+$produk1 = new Produk("Naruto", "Mashashi Kismitho", "Shonen Jump", 3000);
 
-// $produk2 = new Produk();
-// $produk2->judul = "Uncharted";
-// $produk2->tambahProperty = "hahahaha";
-// var_dump($produk2);
+$produk2 = new Produk("Uncharted", "Neil Druckmann", "Sony Computer Entertainment", 5000);
 
-$produk3 = new Produk();
-$produk3->judul = "Naruto";
-$produk3->penulis = "Mashashi Kismitho";
-$produk3->penerbit = "Shonen Jump";
-$produk3->harga = 3000;
-
-$produk4 = new Produk();
-$produk4->judul = "Uncharted";
-$produk4->penulis = "Neil Druckmann";
-$produk4->penerbit = "Sony Computer";
-$produk4->harga = 250000;
-
-echo $produk3->getLabel();
+echo $produk1->getLabel();
 echo "<br>";
-echo $produk4->getLabel();
+echo $produk2->getLabel();
